@@ -80,7 +80,16 @@ public class MonotaController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (isGround == true)
+            {
+                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.S))
         {
 
         }
