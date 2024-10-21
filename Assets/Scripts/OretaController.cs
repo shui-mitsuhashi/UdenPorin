@@ -37,7 +37,8 @@ public class OretaController : MonoBehaviour
 
 
         //ADÉLÅ[éÊìæ
-        float horizontal1 = Input.GetAxis("Horizontal1");
+        //float horizontal1 = Input.GetAxis("Horizontal1");
+        float horizontal = Input.GetAxis("JoystickHorizontal2");
 
         // Get the direction the camera is facing
         Vector3 right = playerCamera.transform.right;
@@ -47,7 +48,7 @@ public class OretaController : MonoBehaviour
         right.Normalize();
 
         // Calculate the direction based on the input
-        Vector3 direction = right * horizontal1;
+        Vector3 direction = right * horizontal;
 
         // Move the player
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
