@@ -7,7 +7,7 @@ public class OretaController : MonoBehaviour
     [Header("ˆÚ“®‘¬“x")]
     public float speed = 10.0f;
     [Header("ƒWƒƒƒ“ƒv—Í")]
-    public float jumpPower = 5f;
+    public float jumpPower = 15f;
 
     public Rigidbody rb;
     public Camera playerCamera;
