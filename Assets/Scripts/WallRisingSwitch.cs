@@ -1,4 +1,4 @@
-//逆L字の壁を上昇させるスイッチのスクリプトby片桐歩夢
+//壁を上昇させるスイッチのスクリプトby片桐歩夢
 
 using System.Collections;
 using System.Collections.Generic;
@@ -6,14 +6,18 @@ using UnityEngine;
 
 public class WallRisingSwitch : MonoBehaviour
 {
-    public bool switchPushing = false;//スイッチが押されているか
+    public bool switchPushing = false; // スイッチが押されているか
     public GameObject SwitchTrriger;
-    public GameObject LWall;
+    public GameObject RisingGround;
+    private Vector3 initialPosition; // 初期位置
+    private float lowerLimit = -10f; // 下限のY位置
+    private float speed = 5f; // 上下する速度
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // 初期位置を保存
+        initialPosition = RisingGround.transform.position;
     }
 
     // Update is called once per frame
@@ -21,17 +25,27 @@ public class WallRisingSwitch : MonoBehaviour
     {
         if (switchPushing)
         {
-            LWall.transform.position += new Vector3(0, 5 * Time.deltaTime, 0);
+            // 下に下がり、下限まで達したら止まる
+            if (RisingGround.transform.position.y > initialPosition.y + lowerLimit)
+            {
+                RisingGround.transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
+            }
+        }
+        else
+        {
+            // 初期位置まで戻る
+            if (RisingGround.transform.position.y < initialPosition.y)
+            {
+                RisingGround.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+            }
         }
     }
-
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.name == "MonotaCarryBox")
         {
             switchPushing = true;
-            //Debug.Log("MonotaCarryBoxがトリガーに触れている");
         }
     }
 
