@@ -7,7 +7,7 @@ public class MonotaController : MonoBehaviour
     [Header("�ړ����x")]
     public float speed = 10.0f;
     [Header("�W�����v��")]
-    public float jumpPower = 5f;
+    public float jumpPower = 15f;
 
     public Rigidbody rb;
     public Camera playerCamera;
@@ -40,7 +40,9 @@ public class MonotaController : MonoBehaviour
         
 
         //AD�L�[�擾
-        float horizontal = Input.GetAxis("Horizontal");
+
+        //float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("JoystickHorizontal1");
 
         // Get the direction the camera is facing
         Vector3 right = playerCamera.transform.right;
@@ -62,6 +64,7 @@ public class MonotaController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else if (Input.GetKeyDown(KeyCode.D))
+
         {
             // D�L�[���������Ƃ��ɉE�������iY����0�x��]�j
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -77,7 +80,16 @@ public class MonotaController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (isGround == true)
+            {
+                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.S))
         {
 
         }

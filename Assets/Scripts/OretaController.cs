@@ -7,7 +7,7 @@ public class OretaController : MonoBehaviour
     [Header("移動速度")]
     public float speed = 10.0f;
     [Header("ジャンプ力")]
-    public float jumpPower = 5f;
+    public float jumpPower = 15f;
 
     public Rigidbody rb;
     public Camera playerCamera;
@@ -37,7 +37,8 @@ public class OretaController : MonoBehaviour
 
 
         //ADキー取得
-        float horizontal = Input.GetAxis("Horizontal");
+        //float horizontal1 = Input.GetAxis("Horizontal1");
+        float horizontal = Input.GetAxis("JoystickHorizontal2");
 
         // Get the direction the camera is facing
         Vector3 right = playerCamera.transform.right;
@@ -74,12 +75,20 @@ public class OretaController : MonoBehaviour
             }
         }
 
+        if (Input.GetButtonDown("Fire1_2"))
+        {
+            if (isGround == true)
+            {
+                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.S))
         {
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && !isBulletActive)
+        if (Input.GetKeyDown(KeyCode.E) && !isBulletActive)
         {
             ShootBullet();
         }
