@@ -8,6 +8,7 @@ TagManager:
   - OretaInteraction
   - MonotaInteraction
   - DeadZone
+  - Grabbable
   layers:
   - Default
   - TransparentFX
