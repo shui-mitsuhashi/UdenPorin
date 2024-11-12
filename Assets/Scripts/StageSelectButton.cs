@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class TitleScene : MonoBehaviour
+public class StageSelectButton : MonoBehaviour
 {
     public GameObject firstButton;
-    public void LoadScene()
+    public void Satge1Load()
     {
-        SceneManager.LoadScene("StageSelect");
+        SceneManager.LoadScene("SampleStage");
     }
     // Start is called before the first frame update
     void Start()

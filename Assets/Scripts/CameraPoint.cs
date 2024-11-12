@@ -26,6 +26,12 @@ public class CameraPoint : MonoBehaviour
 
             // このスクリプトがアタッチされたGamePlayerを中間地点に移動
             transform.position = midpoint;
+
+            if (midpoint.y < 0)
+            {
+                midpoint.y = 0;
+            }
+
         }
     }
 }
