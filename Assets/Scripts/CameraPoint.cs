@@ -22,10 +22,16 @@ public class CameraPoint : MonoBehaviour
             Vector3 position2 = Player2.transform.position;
 
             // 中間地点を計算
-            Vector3 midpoint = (position1 + position2) / 2;
+            //Vector3 midpoint = (position1 + position2) / 2;
 
             // このスクリプトがアタッチされたGamePlayerを中間地点に移動
-            transform.position = midpoint;
+            //transform.position = midpoint;
+
+            // 中間地点のX座標を計算
+            float midpointX = (position1.x + position2.x) / 2;
+
+            // X軸方向の中間地点に移動し、YとZは現在の位置を維持
+            transform.position = new Vector3(midpointX, transform.position.y, transform.position.z);
         }
     }
 }
