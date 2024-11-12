@@ -8,6 +8,8 @@ TagManager:
   - OretaInteraction
   - MonotaInteraction
   - DeadZone
+  - MonotaIntract
+  - Trampoline
   layers:
   - Default
   - TransparentFX
