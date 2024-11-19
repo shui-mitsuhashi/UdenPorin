@@ -289,8 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d27606e9a7640c9ae4746bc1b3f4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftArm: {fileID: 266325879}
-  rightArm: {fileID: 266325879}
+  leftArm: {fileID: 1962080548}
   stretchSpeed: 1
   maxStretch: 2
   originalScaleX: 1
@@ -718,7 +717,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftArm: {fileID: 1310434875}
-  rightArm: {fileID: 1310434875}
   stretchSpeed: 1
   maxStretch: 2
   originalScaleX: 1
