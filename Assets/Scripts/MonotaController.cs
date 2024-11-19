@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MonotaController : MonoBehaviour
 {
-    [Header("�ړ����x")]
+    [Header("移動速度")]
     public float speed = 10.0f;
-    [Header("�W�����v��")]
+    [Header("ジャンプ力")]
     public float jumpPower = 15f;
 
     public Rigidbody rb;
@@ -14,10 +14,10 @@ public class MonotaController : MonoBehaviour
     private IsGroundScript childScript;
 
 
-    //�r�L�΂��@�\�Ɏg���e��
-    public GameObject bulletPrefab; // �e�ۂ̃v���n�u
-    public Transform bulletSpawnPoint; // ���ˈʒu
-    public float bulletSpeed = 10f; // �e�ۂ̑��x
+    //旧腕伸ばしに使う予定だった物
+    public GameObject bulletPrefab; //弾丸のプレハブ
+    public Transform bulletSpawnPoint; //弾丸発射地点
+    public float bulletSpeed = 10f; // 弾丸の速度
     private bool isBulletActive = false;
 
     
@@ -25,8 +25,8 @@ public class MonotaController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject childObject = transform.Find("MonotaisGroundTrigger").gameObject;//�����蔻��Ɏg���Ă���q�I�u�W�F�N�g�擾
-        childScript = childObject.GetComponent<IsGroundScript>();//�t�B�[���h�ɑ��
+        GameObject childObject = transform.Find("MonotaisGroundTrigger").gameObject;//子オブジェクトの接地判定取得
+        childScript = childObject.GetComponent<IsGroundScript>();//接地トリガーの接地判定スクリプトを取得
 
         rb = GetComponent<Rigidbody>();
         
@@ -39,7 +39,7 @@ public class MonotaController : MonoBehaviour
 
         
 
-        //AD�L�[�擾
+        //多分基本操作に関する部分
 
         //float horizontal = Input.GetAxis("Horizontal");
         float horizontal = Input.GetAxis("JoystickHorizontal1");
@@ -57,16 +57,16 @@ public class MonotaController : MonoBehaviour
         // Move the player
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
-        //�v���C���[�̕����]��
+        //左右の方向転換処理
         if (Input.GetKeyDown(KeyCode.A))
         {
-            // A�L�[���������Ƃ��ɍ��������iY����180�x��]�j
+            // Aで左に向く
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         else if (Input.GetKeyDown(KeyCode.D))
 
         {
-            // D�L�[���������Ƃ��ɉE�������iY����0�x��]�j
+            // Dで右に向く
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
@@ -108,17 +108,17 @@ public class MonotaController : MonoBehaviour
         rb.velocity = bulletSpawnPoint.forward * bulletSpeed;
 
         MonotaBullet bulletScript = bullet.GetComponent<MonotaBullet>();
-        bulletScript.Monota = this.gameObject; // Monota�I�u�W�F�N�g��n��
+        bulletScript.Monota = this.gameObject;//
 
-        // �e�ۂ����݂���Ԃ͔��˂ł��Ȃ��悤�ɂ���
+        // 弾丸が存在しているのか
         isBulletActive = true;
 
-        // �e�ۂ�������^�C�~���O�Ńt���O�����Z�b�g����
+        //弾丸が消えたら再び発射可能になる
         bullet.GetComponent<MonotaBullet>().OnBulletDestroyed += ResetShootFlag;
     }
 
     void ResetShootFlag()
     {
-        isBulletActive = false; // �e�ۂ���������Ĕ��ˉ\�ɂ���
+        isBulletActive = false;//
     }
 }
