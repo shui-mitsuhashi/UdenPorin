@@ -8,6 +8,8 @@ TagManager:
   - OretaInteraction
   - MonotaInteraction
   - DeadZone
+  - MonotaIntract
+  - Trampoline
   - Grabbable
   layers:
   - Default
