@@ -5,7 +5,7 @@ using UnityEngine;
 public class Test_ArmStretc : MonoBehaviour
 {
     public GameObject targetObject;  // 対象のオブジェクト
-    public float scaleSpeed = 2f;    // スケールの変化速度
+    public float scaleSpeed = 8f;    // スケールの変化速度
     private Vector3 originalScale;   // 元のスケール
     private bool isScaling = false;  // スケールを大きくするフラグ
 
