@@ -3,7 +3,77 @@ guid: e729e003cc4bd474c83077b789c2edd6
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic11
+    second: {fileID: 2100000, guid: f4498550bb681a748aeedab2411e6fdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic2
+    second: {fileID: 2100000, guid: bc51fd6a0ba808b4d8d83f4fe1e7cbd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic3
+    second: {fileID: 2100000, guid: 042ed59d153c69a4199da2993af97055, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic4
+    second: {fileID: 2100000, guid: 0d67ad4b19548ff45a984c500bf50bd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic5
+    second: {fileID: 2100000, guid: a298065c65c68854796d011d58ec23a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic6
+    second: {fileID: 2100000, guid: 17e1b75c042665942bae32c8d31b2810, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic7
+    second: {fileID: 2100000, guid: 5a71cc909c3341246ab1100a0274b63d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic8
+    second: {fileID: 2100000, guid: 2121b619b7419f14eb2e9cfdf98eaadc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: anisotropic9
+    second: {fileID: 2100000, guid: c7b96b3324fb7b84897cfeb962a1f9b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__anisotropic5
+    second: {fileID: 2100000, guid: e9686c03bcfe6d04f9643b6915090d09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__anisotropic6
+    second: {fileID: 2100000, guid: a4bc7d0093bd97b478c47334d354fe16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__anisotropic7
+    second: {fileID: 2100000, guid: d30dd780a6f392c49ba8a6c15c310f91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__anisotropic8
+    second: {fileID: 2100000, guid: ef2a212c14e41b8499f12dfad8effc25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__anisotropic5
+    second: {fileID: 2100000, guid: 75c393c253cbf6341b9628c1181d0152, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
