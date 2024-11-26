@@ -5,6 +5,7 @@ using UnityEngine;
 public class IsGroundScript : MonoBehaviour
 {
     private string groundTag = "Ground";
+    private string grabbableTag = "Grabbable";
     private string trampolineTag = "Trampoline"; // トランポリン用タグ
     public bool isGround = false;
     public bool isGroundEnter, isGroundStay, isGroundExit;
@@ -39,7 +40,7 @@ public class IsGroundScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // 地面判定
-        if (other.tag == groundTag)
+        if (other.tag == groundTag||other.tag==grabbableTag)
         {
             isGroundEnter = true;
         }
@@ -59,7 +60,7 @@ public class IsGroundScript : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // 地面に触れている場合の処理
-        if (other.tag == groundTag)
+        if (other.tag == groundTag || other.tag == grabbableTag)
         {
             isGroundStay = true;
         }
@@ -68,7 +69,7 @@ public class IsGroundScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // 地面から離れた場合の処理
-        if (other.tag == groundTag)
+        if (other.tag == groundTag || other.tag == grabbableTag)
         {
             isGroundExit = true;
         }
