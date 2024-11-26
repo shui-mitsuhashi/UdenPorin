@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 11881032}
   - component: {fileID: 11881036}
   - component: {fileID: 11881037}
-  - component: {fileID: 11881039}
   - component: {fileID: 11881038}
   m_Layer: 0
   m_Name: Oreta
@@ -270,29 +269,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 11881031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072526e4108f84259aeed95a85f3489f, type: 3}
+  m_Script: {fileID: 11500000, guid: 517990bd54a4da647bc7f0b6b70f3c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftArm: {fileID: 725897126}
-  rightArm: {fileID: 725897126}
-  pullSpeed: 2
-  minDistance: 1
---- !u!114 &11881039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11881031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d27606e9a7640c9ae4746bc1b3f4e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftArm: {fileID: 1962080548}
-  stretchSpeed: 1
-  maxStretch: 2
-  originalScaleX: 1
+  targetObject: {fileID: 0}
+  scaleSpeed: 2
 --- !u!1 &13744652
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +336,7 @@ MonoBehaviour:
   isGroundEnter: 0
   isGroundStay: 0
   isGroundExit: 0
+  bounceForce: 15
 --- !u!1 &44790632
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +595,7 @@ GameObject:
   - component: {fileID: 725897129}
   - component: {fileID: 725897128}
   - component: {fileID: 725897127}
+  - component: {fileID: 725897130}
   m_Layer: 0
   m_Name: OreHand
   m_TagString: Untagged
@@ -698,6 +681,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725897125}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &725897130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725897125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba437b281af50b478e92f5e945e629f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionOffset: {x: 0.5, y: 0, z: 0}
+  rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1195489317
 GameObject:
   m_ObjectHideFlags: 0

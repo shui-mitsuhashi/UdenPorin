@@ -23,7 +23,7 @@ public class Test_ArmStretc : MonoBehaviour
         if (targetObject == null) return;
 
         // 入力チェック（キーボードEキー or Xboxコントローラー右トリガー）
-        if (Input.GetKey(KeyCode.E) || Input.GetAxis("RTrigger") > 0.1f)
+        if (Input.GetKey(KeyCode.E) || Input.GetAxis("MonotaRTrigger") > 0.1f)
         {
             isScaling = true;  // スケールを大きくする
         }
