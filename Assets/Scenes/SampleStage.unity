@@ -1398,11 +1398,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578498971}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &579887063 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6612477037011489964, guid: b9ee5aa132521864aa866b22d4069259, type: 3}
-  m_PrefabInstance: {fileID: 6612477036515494779}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &618540326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,7 +2441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player1: {fileID: 241618051}
-  Player2: {fileID: 579887063}
+  Player2: {fileID: 0}
 --- !u!1 &1057081157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,7 +4043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player1: {fileID: 241618051}
-  Player2: {fileID: 579887063}
+  Player2: {fileID: 0}
   respawnDelay: 1
 --- !u!1 &1527948293
 GameObject:
@@ -5254,6 +5249,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e729e003cc4bd474c83077b789c2edd6, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7716826238630268368, guid: e729e003cc4bd474c83077b789c2edd6, type: 3}
       propertyPath: m_Name
       value: GraplePoint
@@ -5322,7 +5321,7 @@ PrefabInstance:
     - target: {fileID: 1580680873296081771, guid: f7c91cd77afdd8944aaa62a717c39a2c, type: 3}
       propertyPath: player1
       value: 
-      objectReference: {fileID: 579887063}
+      objectReference: {fileID: 0}
     - target: {fileID: 1580680873296081771, guid: f7c91cd77afdd8944aaa62a717c39a2c, type: 3}
       propertyPath: player2
       value: 

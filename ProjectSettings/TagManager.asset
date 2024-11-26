@@ -10,6 +10,7 @@ TagManager:
   - DeadZone
   - MonotaIntract
   - Trampoline
+  - Grabbable
   layers:
   - Default
   - TransparentFX
