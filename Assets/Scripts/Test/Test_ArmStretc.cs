@@ -5,6 +5,8 @@ using UnityEngine;
 public class Test_ArmStretc : MonoBehaviour
 {
     public GameObject targetObject;  // 対象のオブジェクト
+    public GameObject trampoline;
+    private Collider trampolineCollider; // トランポリンのコライダー
     public float scaleSpeed = 2f;    // スケールの変化速度
     private Vector3 originalScale;   // 元のスケール
     private bool isScaling = false;  // スケールを大きくするフラグ
@@ -15,6 +17,18 @@ public class Test_ArmStretc : MonoBehaviour
         {
             // 対象オブジェクトの元のスケールを記録
             originalScale = targetObject.transform.localScale;
+        }
+
+        if (trampoline != null)
+        {
+            // トランポリンのコライダーを取得
+            trampolineCollider = trampoline.GetComponent<Collider>();
+
+            // トランポリンのコライダーを初期状態で無効化
+            if (trampolineCollider != null)
+            {
+                trampolineCollider.enabled = false;
+            }
         }
     }
 
@@ -34,6 +48,9 @@ public class Test_ArmStretc : MonoBehaviour
 
         // スケールの更新
         UpdateScale();
+
+        // トランポリンのコライダーの有効化/無効化
+        UpdateTrampolineCollider();
     }
 
     void UpdateScale()
@@ -54,5 +71,20 @@ public class Test_ArmStretc : MonoBehaviour
 
         // スケールを更新
         targetObject.transform.localScale = currentScale;
+    }
+
+    void UpdateTrampolineCollider()
+    {
+        if (trampolineCollider == null) return;
+
+        // targetObjectがoriginalScale以上のときにコライダーを有効化
+        if (targetObject.transform.localScale.x > originalScale.x)
+        {
+            trampolineCollider.enabled = true;
+        }
+        else
+        {
+            trampolineCollider.enabled = false;
+        }
     }
 }
