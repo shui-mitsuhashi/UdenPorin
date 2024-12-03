@@ -2447,6 +2447,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1: {fileID: 241618051}
   Player2: {fileID: 869661472}
+--- !u!4 &1044892527 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7161911771095722140, guid: 886e98fbb9a348547aa54ba9c6fc1c44, type: 3}
+  m_PrefabInstance: {fileID: 1182280059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1178584552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,7 +2548,7 @@ PrefabInstance:
       objectReference: {fileID: 963194227}
     - target: {fileID: 7161911769842798683, guid: 886e98fbb9a348547aa54ba9c6fc1c44, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7161911769842798683, guid: 886e98fbb9a348547aa54ba9c6fc1c44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2589,6 +2594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monota 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7161911769842799015, guid: 886e98fbb9a348547aa54ba9c6fc1c44, type: 3}
+      propertyPath: trampoline
+      value: 
+      objectReference: {fileID: 1401005005}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886e98fbb9a348547aa54ba9c6fc1c44, type: 3}
 --- !u!1 &1215024264
@@ -2865,7 +2874,7 @@ RectTransform:
   m_Children:
   - {fileID: 1615999518}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3761,13 +3770,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401005005}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.87, y: -0.83, z: -1}
-  m_LocalScale: {x: 2, y: 0.2, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: -0.1, z: 0}
+  m_LocalScale: {x: 3, y: 0.4, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1044892527}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430564987
 GameObject:
@@ -4074,9 +4083,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31173a5d6254dd4194959a6cb3e4cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player1Dead: 0
+  Player2Dead: 0
   Player1: {fileID: 869661472}
   Player2: {fileID: 241618051}
   respawnDelay: 1
+  Player1Start: {fileID: 0}
+  Player2Start: {fileID: 0}
 --- !u!1 &1500696415
 GameObject:
   m_ObjectHideFlags: 0
