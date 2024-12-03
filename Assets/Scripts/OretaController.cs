@@ -94,7 +94,7 @@ public class OretaController : MonoBehaviour
         }
     }
 
-    void ShootBullet()
+    void ShootBullet()//ëΩï™Ç‡Ç§égÇÌÇ»Ç¢Åi12/3éûì_)
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
