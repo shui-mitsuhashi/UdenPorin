@@ -13,7 +13,7 @@ public class GrabAndRelease : MonoBehaviour
     void Update()
     {
         // RキーまたはBボタンが押されたとき
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("BButton"))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("MonotaBButton"))
         {
             if (isFollowing)
             {
