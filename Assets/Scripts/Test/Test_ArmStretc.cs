@@ -60,7 +60,7 @@ public class Test_ArmStretc : MonoBehaviour
         if (isScaling)
         {
             // Xスケールを徐々に2倍まで拡大
-            float targetXScale = originalScale.x * 3;
+            float targetXScale = originalScale.x * 7;
             currentScale.x = Mathf.MoveTowards(currentScale.x, targetXScale, scaleSpeed * Time.deltaTime);
         }
         else
