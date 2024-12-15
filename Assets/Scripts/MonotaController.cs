@@ -40,8 +40,8 @@ public class MonotaController : MonoBehaviour
         
 
         //ADキー取得
-        //float horizontal = Input.GetAxis("Horizontal");
-        float horizontal = Input.GetAxis("JoystickHorizontal1");
+        float horizontal = Input.GetAxis("Horizontal");
+        //float horizontal = Input.GetAxis("JoystickHorizontal1");
 
         // Get the direction the camera is facing
         Vector3 right = playerCamera.transform.right;

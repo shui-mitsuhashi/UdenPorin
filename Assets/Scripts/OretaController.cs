@@ -75,6 +75,14 @@ public class OretaController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isGround == true)
+            {
+                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+            }
+        }
+
         if (Input.GetButtonDown("Fire1_2"))
         {
             if (isGround == true)
@@ -94,7 +102,7 @@ public class OretaController : MonoBehaviour
         }
     }
 
-    void ShootBullet()
+    void ShootBullet()//ëΩï™Ç‡Ç§égÇÌÇ»Ç¢Åi12/3éûì_)
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 

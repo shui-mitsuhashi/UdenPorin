@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class Test_ArmStretc : MonoBehaviour
 {
-    public GameObject targetObject;  // ‘ÎÛ‚ÌƒIƒuƒWƒFƒNƒg
+    public GameObject targetObject;  // ï¿½ÎÛ‚ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½g
     public GameObject trampoline;
-    private Collider trampolineCollider; // ƒgƒ‰ƒ“ƒ|ƒŠƒ“‚ÌƒRƒ‰ƒCƒ_[
-    public float scaleSpeed = 2f;    // ƒXƒP[ƒ‹‚Ì•Ï‰»‘¬“x
-    private Vector3 originalScale;   // Œ³‚ÌƒXƒP[ƒ‹
-    private bool isScaling = false;  // ƒXƒP[ƒ‹‚ğ‘å‚«‚­‚·‚éƒtƒ‰ƒO
+    private Collider trampolineCollider; // ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½Cï¿½_ï¿½[
+    public float scaleSpeed = 2f;    // ï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½Ì•Ï‰ï¿½ï¿½ï¿½ï¿½x
+    private Vector3 originalScale;   // ï¿½ï¿½ï¿½ÌƒXï¿½Pï¿½[ï¿½ï¿½
+    private bool isScaling = false;  // ï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½ï¿½å‚«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O
 
     void Start()
     {
         if (targetObject != null)
         {
-            // ‘ÎÛƒIƒuƒWƒFƒNƒg‚ÌŒ³‚ÌƒXƒP[ƒ‹‚ğ‹L˜^
+            // ï¿½ÎÛƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŒï¿½ï¿½ÌƒXï¿½Pï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½^
             originalScale = targetObject.transform.localScale;
         }
 
         if (trampoline != null)
         {
-            // ƒgƒ‰ƒ“ƒ|ƒŠƒ“‚ÌƒRƒ‰ƒCƒ_[‚ğæ“¾
+            // ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½ï¿½ï¿½æ“¾
             trampolineCollider = trampoline.GetComponent<Collider>();
 
-            // ƒgƒ‰ƒ“ƒ|ƒŠƒ“‚ÌƒRƒ‰ƒCƒ_[‚ğ‰Šúó‘Ô‚Å–³Œø‰»
+            // ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚Å–ï¿½ï¿½ï¿½ï¿½ï¿½
             if (trampolineCollider != null)
             {
                 trampolineCollider.enabled = false;
@@ -36,20 +36,20 @@ public class Test_ArmStretc : MonoBehaviour
     {
         if (targetObject == null) return;
 
-        // “ü—Íƒ`ƒFƒbƒNiƒL[ƒ{[ƒhEƒL[ or XboxƒRƒ“ƒgƒ[ƒ‰[‰EƒgƒŠƒK[j
+        // ï¿½ï¿½ï¿½Íƒ`ï¿½Fï¿½bï¿½Nï¿½iï¿½Lï¿½[ï¿½{ï¿½[ï¿½hEï¿½Lï¿½[ or Xboxï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Eï¿½gï¿½ï¿½ï¿½Kï¿½[ï¿½j
         if (Input.GetKey(KeyCode.E) || Input.GetAxis("MonotaRTrigger") > 0.1f)
         {
-            isScaling = true;  // ƒXƒP[ƒ‹‚ğ‘å‚«‚­‚·‚é
+            isScaling = true;  // ï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½ï¿½å‚«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
-            isScaling = false; // ƒXƒP[ƒ‹‚ğŒ³‚É–ß‚·
+            isScaling = false; // ï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
         }
 
-        // ƒXƒP[ƒ‹‚ÌXV
+        // ï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½ÌXï¿½V
         UpdateScale();
 
-        // ƒgƒ‰ƒ“ƒ|ƒŠƒ“‚ÌƒRƒ‰ƒCƒ_[‚Ì—LŒø‰»/–³Œø‰»
+        // ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½Ì—Lï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         UpdateTrampolineCollider();
     }
 
@@ -59,17 +59,17 @@ public class Test_ArmStretc : MonoBehaviour
 
         if (isScaling)
         {
-            // XƒXƒP[ƒ‹‚ğ™X‚É2”{‚Ü‚ÅŠg‘å
+            // Xï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½2ï¿½{ï¿½Ü‚ÅŠgï¿½ï¿½
             float targetXScale = originalScale.x * 10;
             currentScale.x = Mathf.MoveTowards(currentScale.x, targetXScale, scaleSpeed * Time.deltaTime);
         }
         else
         {
-            // XƒXƒP[ƒ‹‚ğ™X‚ÉŒ³‚ÌƒTƒCƒY‚Ö–ß‚·
+            // Xï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½ÉŒï¿½ï¿½ÌƒTï¿½Cï¿½Yï¿½Ö–ß‚ï¿½
             currentScale.x = Mathf.MoveTowards(currentScale.x, originalScale.x, scaleSpeed * Time.deltaTime);
         }
 
-        // ƒXƒP[ƒ‹‚ğXV
+        // ï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½V
         targetObject.transform.localScale = currentScale;
     }
 
@@ -77,7 +77,7 @@ public class Test_ArmStretc : MonoBehaviour
     {
         if (trampolineCollider == null) return;
 
-        // targetObject‚ªoriginalScaleˆÈã‚Ì‚Æ‚«‚ÉƒRƒ‰ƒCƒ_[‚ğ—LŒø‰»
+        // targetObjectï¿½ï¿½originalScaleï¿½Èï¿½Ì‚Æ‚ï¿½ï¿½ÉƒRï¿½ï¿½ï¿½Cï¿½_ï¿½[ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½
         if (targetObject.transform.localScale.x > originalScale.x)
         {
             trampolineCollider.enabled = true;
