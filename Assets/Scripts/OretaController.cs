@@ -75,6 +75,14 @@ public class OretaController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isGround == true)
+            {
+                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+            }
+        }
+
         if (Input.GetButtonDown("Fire1_2"))
         {
             if (isGround == true)
