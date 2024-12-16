@@ -12,6 +12,7 @@ public class MonotaController : MonoBehaviour
     public Rigidbody rb;
     public Camera playerCamera;
     private IsGroundScript childScript;
+    public string jumpButton = "RedJump";
 
 
     //腕伸ばしに使う弾丸
@@ -35,10 +36,8 @@ public class MonotaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isGround = childScript.isGround;
-
+       
         
-
         //ADキー取得
         float horizontal = Input.GetAxis("Horizontal");
         //float horizontal = Input.GetAxis("JoystickHorizontal1");
@@ -73,18 +72,12 @@ public class MonotaController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isGround == true)
-            {
-                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-            }
+            RedJump();
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown(jumpButton))
         {
-            if (isGround == true)
-            {
-                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-            }
+            RedJump();
         }
 
 
@@ -96,6 +89,16 @@ public class MonotaController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !isBulletActive)
         {
             ShootBullet();
+        }
+    }
+
+    void RedJump()
+    {
+        bool isGround = childScript.isGround;
+
+        if (isGround == true)
+        {
+            rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
         }
     }
 

@@ -77,18 +77,12 @@ public class OretaController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isGround == true)
-            {
-                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-            }
+            BlueJump();
         }
 
-        if (Input.GetButtonDown("Fire1_2"))
+        if (Input.GetButtonDown("BlueJump"))
         {
-            if (isGround == true)
-            {
-                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-            }
+            BlueJump();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -101,6 +95,17 @@ public class OretaController : MonoBehaviour
             ShootBullet();
         }
     }
+
+    void BlueJump()
+    {
+        bool isGround = childScript.isGround;
+
+        if (isGround == true)
+        {
+            rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+        }
+    }
+
 
     void ShootBullet()//ëΩï™Ç‡Ç§égÇÌÇ»Ç¢Åi12/3éûì_)
     {
