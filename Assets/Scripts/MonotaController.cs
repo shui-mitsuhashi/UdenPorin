@@ -12,7 +12,6 @@ public class MonotaController : MonoBehaviour
     public Rigidbody rb;
     public Camera playerCamera;
     private IsGroundScript childScript;
-    public string jumpButton = "RedJump";
 
 
     //腕伸ばしに使う弾丸
@@ -39,8 +38,8 @@ public class MonotaController : MonoBehaviour
        
         
         //ADキー取得
-        float horizontal = Input.GetAxis("Horizontal");
-        //float horizontal = Input.GetAxis("JoystickHorizontal1");
+        //float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxis("JoystickHorizontal1");
 
         // Get the direction the camera is facing
         Vector3 right = playerCamera.transform.right;
@@ -68,6 +67,18 @@ public class MonotaController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
+        // 入力が一定のしきい値を超えた場合に方向を変える
+        if (horizontal < -0.5f)
+        {
+            // 左スティックを左に倒したときに左を向く（Y軸で180度回転）
+            transform.rotation = Quaternion.Euler(0, 280, 0);
+        }
+        else if (horizontal > 0.5f)
+        {
+            // 左スティックを右に倒したときに右を向く（Y軸で0度回転）
+            transform.rotation = Quaternion.Euler(0, 100, 0);
+        }
+
 
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -75,7 +86,7 @@ public class MonotaController : MonoBehaviour
             RedJump();
         }
 
-        if (Input.GetButtonDown(jumpButton))
+        if (Input.GetButtonDown("RedJump"))
         {
             RedJump();
         }
