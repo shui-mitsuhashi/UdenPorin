@@ -32,8 +32,7 @@ public class OretaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isGround = childScript.isGround;
-
+       
 
 
         //ADÉLÅ[éÊìæ
@@ -67,13 +66,7 @@ public class OretaController : MonoBehaviour
 
 
 
-        if (Input.GetMouseButton(0))
-        {
-            if (isGround == true)
-            {
-                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-            }
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
