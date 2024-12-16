@@ -246,7 +246,7 @@ InputManager:
     axis: 1
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Fire1
+    m_Name: RedJump
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -262,7 +262,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Fire1_2
+    m_Name: BlueJump
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
