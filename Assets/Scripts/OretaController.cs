@@ -32,8 +32,7 @@ public class OretaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool isGround = childScript.isGround;
-
+       
 
 
         //ADキー取得
@@ -54,7 +53,7 @@ public class OretaController : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
         //プレイヤーの方向転換
-        if (Input.GetKeyDown(KeyCode.O))
+        /*if (Input.GetKeyDown(KeyCode.O))
         {
             // Oキーを押したときに左を向く（Y軸で180度回転）
             transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -63,17 +62,21 @@ public class OretaController : MonoBehaviour
         {
             // Pキーを押したときに右を向く（Y軸で0度回転）
             transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+        }*/
 
-
-
-        if (Input.GetMouseButton(0))
+        // 入力が一定のしきい値を超えた場合に方向を変える
+        if (horizontal < -0.5f)
         {
-            if (isGround == true)
-            {
-                rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-            }
+            // 左スティックを左に倒したときに左を向く（Y軸で180度回転）
+            transform.rotation = Quaternion.Euler(0, 235, 0);
         }
+        else if (horizontal > 0.5f)
+        {
+            // 左スティックを右に倒したときに右を向く（Y軸で0度回転）
+            transform.rotation = Quaternion.Euler(0, 55, 0);
+        }
+
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
