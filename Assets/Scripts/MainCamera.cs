@@ -7,7 +7,7 @@ public class MainCamera : MonoBehaviour
     public Transform player;  // プレイヤーのTransformをここにアタッチ
 
     // カメラとプレイヤーのオフセット
-    private Vector3 offset = new Vector3(0, 4.2f, -16f);
+    private Vector3 offset = new Vector3(0, 0.5f, -2f);
 
     void LateUpdate()
     {
