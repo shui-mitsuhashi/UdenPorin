@@ -1,14 +1,12 @@
-//壁を上昇させるスイッチのスクリプトby片桐歩夢
-
+//箱を置いたら壁が上がるスクリプト
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallRisingSwitch : MonoBehaviour
+public class WallMoveUpSwitch : MonoBehaviour
 {
     public bool switchPushing = false; // スイッチが押されているか
-    public GameObject SwitchTrriger;
-    public GameObject RisingGround;
+    public GameObject UpGround;
     private Vector3 initialPosition; // 初期位置
     [Header("下がる下限位置を入れる")]
     public float lowerLimit = -10f; // 下限のY位置
@@ -19,7 +17,7 @@ public class WallRisingSwitch : MonoBehaviour
     void Start()
     {
         // 初期位置を保存
-        initialPosition = RisingGround.transform.position;
+        initialPosition = UpGround.transform.position;
     }
 
     // Update is called once per frame
@@ -28,36 +26,28 @@ public class WallRisingSwitch : MonoBehaviour
         if (switchPushing)
         {
             // 下に下がり、下限まで達したら止まる
-            if (RisingGround.transform.position.y > initialPosition.y + lowerLimit)
+            if (UpGround.transform.position.y > initialPosition.y + lowerLimit)
             {
-                RisingGround.transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
+                UpGround.transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
             }
         }
         else
         {
             // 初期位置まで戻る
-            if (RisingGround.transform.position.y < initialPosition.y)
+            if (UpGround.transform.position.y < initialPosition.y)
             {
-                RisingGround.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+                UpGround.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
             }
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag=="Player")
+        if (other.gameObject.tag == "CarryBox")
         {
             switchPushing = true;
         }
     }
 
-    // トリガーから出た時
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            switchPushing = false;
-        }
-    }
-
+    
 }
