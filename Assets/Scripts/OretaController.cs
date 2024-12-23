@@ -5,9 +5,9 @@ using UnityEngine;
 public class OretaController : MonoBehaviour
 {
     [Header("移動速度")]
-    public float speed = 10.0f;
+    public float speed = 1.2f;
     [Header("ジャンプ力")]
-    public float jumpPower = 15f;
+    public float jumpPower = 4.5f;
 
     public Rigidbody rb;
     public Camera playerCamera;
@@ -55,7 +55,7 @@ public class OretaController : MonoBehaviour
         }
         else if (isGround == false)
         {
-            transform.Translate(direction * speed * 0.5f * Time.deltaTime, Space.World);
+            transform.Translate(direction * speed * 0.7f * Time.deltaTime, Space.World);
         }
         //プレイヤーの方向転換
         /*if (Input.GetKeyDown(KeyCode.O))
