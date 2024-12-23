@@ -19,7 +19,7 @@ public class BlueAnimation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Bool型のパラメーターであるblRotをTrueにする
-            anim.SetBool("BoolJump", true);
+            anim.SetBool("BoolRun", true);
         }
     }
 }
