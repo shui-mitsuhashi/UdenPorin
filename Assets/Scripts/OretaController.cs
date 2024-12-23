@@ -32,8 +32,7 @@ public class OretaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
+        bool isGround = childScript.isGround;
 
         //ADキー取得
         //float horizontal1 = Input.GetAxis("Horizontal1");
@@ -50,8 +49,14 @@ public class OretaController : MonoBehaviour
         Vector3 direction = right * horizontal;
 
         // Move the player
-        transform.Translate(direction * speed * Time.deltaTime, Space.World);
-
+        if (isGround == true)
+        {
+            transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        }
+        else if (isGround == false)
+        {
+            transform.Translate(direction * speed * 0.5f * Time.deltaTime, Space.World);
+        }
         //プレイヤーの方向転換
         /*if (Input.GetKeyDown(KeyCode.O))
         {
@@ -101,12 +106,7 @@ public class OretaController : MonoBehaviour
 
     void BlueJump()
     {
-        bool isGround = childScript.isGround;
-
-        if (isGround == true)
-        {
             rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
-        }
     }
 
 
