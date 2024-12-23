@@ -10,8 +10,10 @@ public class WallRisingSwitch : MonoBehaviour
     public GameObject SwitchTrriger;
     public GameObject RisingGround;
     private Vector3 initialPosition; // 初期位置
-    private float lowerLimit = -10f; // 下限のY位置
-    private float speed = 5f; // 上下する速度
+    [Header("下がる下限位置を入れる")]
+    public float lowerLimit = -10f; // 下限のY位置
+    [Header("ある程度は早くした方が良い")]
+    public float speed = -5f; // 上下する速度
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +45,7 @@ public class WallRisingSwitch : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "MonotaCarryBox")
+        if (other.gameObject.tag=="Player")
         {
             switchPushing = true;
         }
@@ -52,7 +54,7 @@ public class WallRisingSwitch : MonoBehaviour
     // トリガーから出た時
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "MonotaCarryBox")
+        if (other.gameObject.tag == "Player")
         {
             switchPushing = false;
         }
