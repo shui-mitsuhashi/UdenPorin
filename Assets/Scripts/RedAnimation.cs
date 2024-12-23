@@ -23,6 +23,11 @@ public class RedAnimation : MonoBehaviour
             //Bool型のパラメーターであるBoolRunをTrueにする
             anim.SetBool("BoolRun", true);
         }
+        else if (horizontal > -0.5f)
+        {
+            //Bool型のパラメーターであるBoolRunをfalseにする
+            anim.SetBool("BoolRun", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
