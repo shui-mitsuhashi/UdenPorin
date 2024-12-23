@@ -15,11 +15,21 @@ public class RedAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //�����A�X�y�[�X�L�[�������ꂽ��Ȃ�
+        float horizontal = Input.GetAxis("JoystickHorizontal2");
+
+        //もし、スティックが倒されたら
+        if (horizontal < -0.5f)
+        {
+            //Bool型のパラメーターであるBoolRunをTrueにする
+            anim.SetBool("BoolRun", true);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Bool�^�̃p�����[�^�[�ł���blRot��True�ɂ���
-            anim.SetBool("BoolRun", true);
+            anim.SetBool("BoolJump", true);
         }
+
+
     }
 }
