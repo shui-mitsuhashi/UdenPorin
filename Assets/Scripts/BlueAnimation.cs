@@ -15,11 +15,24 @@ public class BlueAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //もし、スペースキーが押されたらなら
+        float horizontal = Input.GetAxis("JoystickHorizontal2");
+
+        //もし、スティックが倒されたら
+        if (horizontal < -0.5f)
+        {
+            //Bool型のパラメーターであるBuulRunをTrueにする
+            anim.SetBool("BoolRun", true);
+        }
+        else if (horizontal > -0.5f)
+        {
+            //Bool型のパラメーターであるBoolRunをfalseにする
+            anim.SetBool("BoolRun", false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Bool型のパラメーターであるblRotをTrueにする
-            anim.SetBool("BoolRun", true);
+            //Bool?^??p?????[?^?[?????blRot??True?????
+            anim.SetBool("BoolJump", true);
         }
     }
 }
