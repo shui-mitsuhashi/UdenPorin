@@ -33,7 +33,7 @@ public class MoneFloor : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Playerタグが付いたオブジェクトが触れたときにそのオブジェクトを子オブジェクトにする
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("CarryBox"))
         {
             collision.transform.SetParent(transform);
         }
@@ -42,7 +42,7 @@ public class MoneFloor : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         // Playerタグが付いたオブジェクトが離れたときに親子関係を解除する
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CarryBox"))
         {
             collision.transform.SetParent(null);
         }
