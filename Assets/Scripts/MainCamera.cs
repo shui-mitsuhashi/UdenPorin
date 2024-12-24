@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    public Transform player;  // プレイヤーのTransformをここにアタッチ
+    public Transform player1;
+    public Transform player2;
+    public Vector3 focusPoint;
 
     // カメラとプレイヤーのオフセット
-    private Vector3 offset = new Vector3(0, 0.15f, -0.8f);
+    private Vector3 offset = new Vector3(0, 0.15f, -2f);
 
     void LateUpdate()
     {
-        // プレイヤーの座標にオフセットを加えてカメラを追従させる
-        transform.position = player.position + offset;
+        focusPoint = (player1.position*4 + player2.position*3) / 7;
+
+        transform.position = focusPoint + offset;
     }
 }
