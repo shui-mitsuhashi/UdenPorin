@@ -90,12 +90,18 @@ public class MonotaController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            RedJump();
+            if (isGround == true)
+            {
+                RedJump();
+            }
         }
 
         if (Input.GetButtonDown("RedJump"))
         {
-            RedJump();
+            if (isGround == true)
+            {
+                RedJump();
+            }
         }
 
 

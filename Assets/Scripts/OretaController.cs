@@ -85,12 +85,18 @@ public class OretaController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            BlueJump();
+            if (isGround == true)
+            {
+                BlueJump();
+            }
         }
 
         if (Input.GetButtonDown("BlueJump"))
         {
-            BlueJump();
+            if (isGround == true)
+            {
+                BlueJump();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.S))
