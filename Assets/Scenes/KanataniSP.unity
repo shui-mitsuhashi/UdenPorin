@@ -6058,6 +6058,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8279610623215032583, guid: 442a8a0a758d7c4448bedd1d51693d73, type: 3}
   m_PrefabInstance: {fileID: 1394087251}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1409044264 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8767599530594534333, guid: 442a8a0a758d7c4448bedd1d51693d73, type: 3}
+  m_PrefabInstance: {fileID: 1394087251}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1428460059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6567,7 +6572,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9805d347cc43fb4eb4f879aca88a2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 372743476}
+  player1: {fileID: 1409044264}
+  player2: {fileID: 372743476}
+  focusPoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1543122790
 PrefabInstance:
   m_ObjectHideFlags: 0
