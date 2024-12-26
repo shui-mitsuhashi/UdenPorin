@@ -21504,6 +21504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHaveCoin: 0
+  coinSound: {fileID: 8300000, guid: 22f84691bff542c4eb39e11e36a1388b, type: 3}
 --- !u!4 &1620902205
 Transform:
   m_ObjectHideFlags: 0
