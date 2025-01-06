@@ -9,7 +9,7 @@ public class MainCamera : MonoBehaviour
     public Vector3 focusPoint;
 
     // カメラとプレイヤーのオフセット
-    private Vector3 offset = new Vector3(0, -01f, -0.8f);
+    private Vector3 offset = new Vector3(0, 0.15f, -2f);
 
     void LateUpdate()
     {
