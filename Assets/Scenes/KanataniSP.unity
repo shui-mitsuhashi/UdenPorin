@@ -17600,7 +17600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9171037a9c0ec4291d5c0c77e7e985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageBGM: {fileID: 8300000, guid: b01e974a8d584504ea8e3c9708716b1a, type: 3}
+  StageBGM: {fileID: 8300000, guid: b029401f30db32f4f8dd9e05357d28e1, type: 3}
 --- !u!4 &1075221143
 Transform:
   m_ObjectHideFlags: 0
@@ -17626,7 +17626,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b01e974a8d584504ea8e3c9708716b1a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b029401f30db32f4f8dd9e05357d28e1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
