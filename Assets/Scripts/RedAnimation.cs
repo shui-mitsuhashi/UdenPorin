@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class RedAnimation : MonoBehaviour
 {
-    private Animator anim;  //Animator��anim�Ƃ����ϐ��Œ�`����
+    private Animator anim;  //Animatorをanimという変数で定義する
+    private int JumpframeCount = 0;  // フレームカウント用変数
+    private int StretchframeCount = 0;
+    public int JumpFrames = 32; // 目標フレーム数
+    public int StretchFrames = 180;
+    private bool isJumping = false;
+    private bool isStretch = false;
 
     // Start is called before the first frame update
     void Start()
@@ -15,26 +21,59 @@ public class RedAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("JoystickHorizontal2");
+        float horizontal = Input.GetAxis("JoystickHorizontal1");
 
         //もし、スティックが倒されたら
-        if (horizontal < -0.5f)
+        if (horizontal >= -0.5f && horizontal <= 0.5f)
         {
-            //Bool型のパラメーターであるBoolRunをTrueにする
-            anim.SetBool("BoolRun", true);
-        }
-        else if (horizontal > -0.5f)
-        {
-            //Bool型のパラメーターであるBoolRunをfalseにする
+            //Bool型のパラメーターであるBuulRunをTrueにする
             anim.SetBool("BoolRun", false);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            //Bool�^�̃p�����[�^�[�ł���blRot��True�ɂ���
-            anim.SetBool("BoolJump", true);
+            //Bool型のパラメーターであるBoolRunをfalseにする
+            anim.SetBool("BoolRun", true);
         }
 
+        if (!isJumping && (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("RedJump")))
+        {
+            anim.SetBool("BoolJump", true);
+            isJumping = true;
+            JumpframeCount = 0; // フレームカウントをリセット
+        }
 
+        // ジャンプ中の処理
+        if (isJumping)
+        {
+            JumpframeCount++;
+
+            // フレーム数が目標に達したらジャンプ終了
+            if (JumpframeCount >= JumpFrames)
+            {
+                anim.SetBool("BoolJump", false);
+                isJumping = false;
+            }
+        }
+
+        //腕伸ばし
+        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("RedJump")))
+        {
+            anim.SetBool("BoolStretch", true);
+            isStretch = true;
+            StretchframeCount = 0; // フレームカウントをリセット
+        }
+
+        // ジャンプ中の処理
+        if (isStretch)
+        {
+            StretchframeCount++;
+
+            // フレーム数が目標に達したらジャンプ終了
+            if (StretchframeCount >= JumpFrames)
+            {
+                anim.SetBool("BoolStretch", false);
+                isStretch = false;
+            }
+        }
     }
 }
