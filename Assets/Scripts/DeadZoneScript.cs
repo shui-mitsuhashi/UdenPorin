@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeadZoneScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DeadZoneScript : MonoBehaviour
     public float respawnDelay = 1f; // リスポーンの遅延時間
     public GameObject Player1Start;
     public GameObject Player2Start;
+
+    public string GameOverSceneName;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -48,6 +51,6 @@ public class DeadZoneScript : MonoBehaviour
 
     private void GameOver()//ゲームオーバー時の処理をここに書く
     {
-
+        SceneManager.LoadScene(GameOverSceneName);
     }
 }
