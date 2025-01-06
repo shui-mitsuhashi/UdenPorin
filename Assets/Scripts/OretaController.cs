@@ -104,10 +104,10 @@ public class OretaController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !isBulletActive)
+        /*if (Input.GetKeyDown(KeyCode.E) && !isBulletActive)
         {
             ShootBullet();
-        }
+        }*/
     }
 
     void BlueJump()
@@ -116,7 +116,7 @@ public class OretaController : MonoBehaviour
     }
 
 
-    void ShootBullet()//多分もう使わない（12/3時点)
+    /*void ShootBullet()//多分もう使わない（12/3時点)
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
@@ -133,5 +133,5 @@ public class OretaController : MonoBehaviour
     void ResetShootFlag()
     {
         isBulletActive = false; // 弾丸が消えたら再発射可能にする
-    }
+    }*/
 }

@@ -6,8 +6,10 @@ public class BlueAnimation : MonoBehaviour
 {
     private Animator anim;  //Animatorをanimという変数で定義する
     public bool isJump = true; // 初期状態をtrueに設定
+    public bool isStretch = true;
     private int frameCount = 0;  // フレームカウント用変数
     public int JumpFrames = 60; // 目標フレーム数
+    public int StretchFrames = 180;
     private bool isJumping = false;
 
     // Start is called before the first frame update
@@ -38,6 +40,11 @@ public class BlueAnimation : MonoBehaviour
             anim.SetBool("BoolJump", true);
             isJumping = true;
             frameCount = 0; // フレームカウントをリセット
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            anim.SetBool("BoolStretch", true);
         }
 
         // ジャンプ中の処理
