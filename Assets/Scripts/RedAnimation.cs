@@ -18,15 +18,15 @@ public class RedAnimation : MonoBehaviour
         float horizontal = Input.GetAxis("JoystickHorizontal2");
 
         //もし、スティックが倒されたら
-        if (horizontal < -0.5f)
+        if (horizontal >= -0.5f && horizontal <= 0.5f)
         {
-            //Bool型のパラメーターであるBoolRunをTrueにする
-            anim.SetBool("BoolRun", true);
+            //Bool型のパラメーターであるBuulRunをTrueにする
+            anim.SetBool("BoolRun", false);
         }
-        else if (horizontal > -0.5f)
+        else
         {
             //Bool型のパラメーターであるBoolRunをfalseにする
-            anim.SetBool("BoolRun", false);
+            anim.SetBool("BoolRun", true);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
