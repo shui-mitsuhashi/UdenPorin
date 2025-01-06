@@ -52,12 +52,12 @@ public class WallRisingSwitch : MonoBehaviour
     }
 
     // ƒgƒŠƒK[‚©‚ço‚½
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             switchPushing = false;
         }
-    }
+    }*/
 
 }

@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Model_Test.unity
     guid: 74f229b338eefa0479d2b6b619657d4e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Setting.unity
     guid: 96df065d92ebdb141a46f56f0db37a45
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StageSelect.unity
     guid: 7d57d7a11829bbb4fb3ec377aae6b672
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 3c3cbd66d1754e5479d15555b041fc3d
   - enabled: 1
     path: Assets/Scenes/Result.unity
     guid: d5d89928396cd454e955f978b025dad7
@@ -23,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleStage.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/TitleScene.unity
-    guid: 3c3cbd66d1754e5479d15555b041fc3d
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: fb387aca71951b349b27acdf0e0657ff
