@@ -15,7 +15,7 @@ public class MainCamera : MonoBehaviour
     {
         focusPoint = (player1.position*4 + player2.position*3) / 7;
 
-        focusPoint.y = Mathf.Clamp(focusPoint.y, 0f, 2f);
+        focusPoint.y = Mathf.Clamp(focusPoint.y, 0f, 1f);
 
         transform.position = focusPoint + offset;
     }
