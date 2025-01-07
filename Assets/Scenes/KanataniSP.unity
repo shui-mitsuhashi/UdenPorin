@@ -9376,7 +9376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1964583271246594228, guid: 490b07944a75cfe47a0562af71f3c1f3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1964583271246594229, guid: 490b07944a75cfe47a0562af71f3c1f3, type: 3}
       propertyPath: Player1
@@ -24831,8 +24831,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3385099, y: 0.027131118, z: 0.26490635}
-  m_Center: {x: 0.084197946, y: -0.0060925297, z: 0.20015112}
+  m_Size: {x: 0.3385099, y: 0.021060556, z: 0.26490635}
+  m_Center: {x: 0.084197946, y: -0.036800727, z: 0.20015115}
 --- !u!1001 &1463111637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25911,7 +25911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8790597007245301149, guid: 724e14ba48e4fab4c803ce04cbe05545, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.011
       objectReference: {fileID: 0}
     - target: {fileID: 8790597007245301149, guid: 724e14ba48e4fab4c803ce04cbe05545, type: 3}
       propertyPath: m_LocalPosition.y
