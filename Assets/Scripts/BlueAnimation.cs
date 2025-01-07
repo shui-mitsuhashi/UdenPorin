@@ -5,12 +5,12 @@ using UnityEngine;
 public class BlueAnimation : MonoBehaviour
 {
     private Animator anim;  //Animatorをanimという変数で定義する
-    public bool isJump = true; // 初期状態をtrueに設定
-    public bool isStretch = true;
-    private int frameCount = 0;  // フレームカウント用変数
-    public int JumpFrames = 60; // 目標フレーム数
+    private int JumpframeCount = 0;  // フレームカウント用変数
+    private int StretchframeCount = 0;
+    public int JumpFrames = 32; // 目標フレーム数
     public int StretchFrames = 180;
     private bool isJumping = false;
+    private bool isStretch = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +21,11 @@ public class BlueAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("JoystickHorizontal2");
+        float horizontal = Input.GetAxis("JoystickHorizontal1");
 
         //もし、スティックが倒されたら
-        if (horizontal >= -0.5f && horizontal <= 0.5f)
-            {
+        if (horizontal >= -0.2f && horizontal <= 0.2f)
+        {
             //Bool型のパラメーターであるBuulRunをTrueにする
             anim.SetBool("BoolRun", false);
         }
@@ -39,24 +39,40 @@ public class BlueAnimation : MonoBehaviour
         {
             anim.SetBool("BoolJump", true);
             isJumping = true;
-            frameCount = 0; // フレームカウントをリセット
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            anim.SetBool("BoolStretch", true);
+            JumpframeCount = 0; // フレームカウントをリセット
         }
 
         // ジャンプ中の処理
         if (isJumping)
         {
-            frameCount++;
+            JumpframeCount++;
 
             // フレーム数が目標に達したらジャンプ終了
-            if (frameCount >= JumpFrames)
+            if (JumpframeCount >= JumpFrames)
             {
                 anim.SetBool("BoolJump", false);
                 isJumping = false;
+            }
+        }
+
+        //腕伸ばし
+        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("OretaRTrigger")))
+        {
+            anim.SetBool("BoolStretch", true);
+            isStretch = true;
+            StretchframeCount = 0; // フレームカウントをリセット
+        }
+
+        // ジャンプ中の処理
+        if (isStretch)
+        {
+            StretchframeCount++;
+
+            // フレーム数が目標に達したらジャンプ終了
+            if (StretchframeCount >= JumpFrames)
+            {
+                anim.SetBool("BoolStretch", false);
+                isStretch = false;
             }
         }
     }
