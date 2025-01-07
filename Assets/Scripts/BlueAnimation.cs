@@ -21,7 +21,7 @@ public class BlueAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("JoystickHorizontal1");
+        float horizontal = Input.GetAxis("JoystickHorizontal2");
 
         //‚à‚µAƒXƒeƒBƒbƒN‚ª“|‚³‚ê‚½‚ç
         if (horizontal >= -0.2f && horizontal <= 0.2f)
@@ -56,7 +56,7 @@ public class BlueAnimation : MonoBehaviour
         }
 
         //˜rL‚Î‚µ
-        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("OretaRTrigger")))
+        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetAxis("MonotaRTrigger") > 0.1f))
         {
             anim.SetBool("BoolStretch", true);
             isStretch = true;
