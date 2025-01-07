@@ -9370,6 +9370,10 @@ PrefabInstance:
       propertyPath: speed
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1964583271246594226, guid: 490b07944a75cfe47a0562af71f3c1f3, type: 3}
+      propertyPath: unSearchSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1964583271246594228, guid: 490b07944a75cfe47a0562af71f3c1f3, type: 3}
       propertyPath: m_Name
       value: DeadWall
