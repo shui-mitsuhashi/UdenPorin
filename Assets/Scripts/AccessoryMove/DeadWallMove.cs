@@ -8,6 +8,14 @@ public class DeadWallMove : MonoBehaviour
     public float unSearchSpeed = 2;
     public bool PlayerSearch = false;
 
+    public AudioClip WallSound;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (PlayerSearch)
@@ -18,6 +26,17 @@ public class DeadWallMove : MonoBehaviour
         {
             transform.Translate(Vector3.right * speed * unSearchSpeed * Time.deltaTime);
         }
-        
+
+        if (WallSound != null)
+        {
+            audioSource.clip = WallSound;
+            audioSource.loop = true; // ÉãÅ[Évçƒê∂ÇóLå¯Ç…Ç∑ÇÈ
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("WallSound is not assigned!");
+        }
+
     }
 }
