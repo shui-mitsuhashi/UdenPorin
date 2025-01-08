@@ -15,11 +15,17 @@ public class WallRisingSwitch : MonoBehaviour
     [Header("ある程度は早くした方が良い")]
     public float speed = -5f; // 上下する速度
 
+    public AudioClip SwitchSE;
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         // 初期位置を保存
         initialPosition = RisingGround.transform.position;
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -27,19 +33,12 @@ public class WallRisingSwitch : MonoBehaviour
     {
         if (switchPushing)
         {
-            // 下に下がり、下限まで達したら止まる
-            if (RisingGround.transform.position.y > initialPosition.y + lowerLimit)
-            {
-                RisingGround.transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
-            }
+            audioSource.PlayOneShot(SwitchSE);
+            DownGround();
         }
         else
         {
-            // 初期位置まで戻る
-            if (RisingGround.transform.position.y < initialPosition.y)
-            {
-                RisingGround.transform.position += new Vector3(0, speed * Time.deltaTime, 0);
-            }
+            
         }
     }
 
@@ -52,11 +51,19 @@ public class WallRisingSwitch : MonoBehaviour
     }
 
     // トリガーから出た時
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             switchPushing = false;
+        }
+    }*/
+
+    void DownGround()
+    {
+        if (RisingGround.transform.position.y > initialPosition.y + lowerLimit)
+        {
+            RisingGround.transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
         }
     }
 

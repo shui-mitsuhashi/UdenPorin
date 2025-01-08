@@ -13,6 +13,9 @@ public class OretaController : MonoBehaviour
     public Camera playerCamera;
     private IsGroundScript childScript;
 
+    public AudioClip EnterSE;
+    private AudioSource audioSource;
+
 
     //腕伸ばし機能に使う弾丸
     public GameObject bulletPrefab; // 弾丸のプレハブ
@@ -27,6 +30,8 @@ public class OretaController : MonoBehaviour
         childScript = childObject.GetComponent<IsGroundScript>();//フィールドに代入
 
         rb = GetComponent<Rigidbody>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -104,19 +109,20 @@ public class OretaController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !isBulletActive)
+        /*if (Input.GetKeyDown(KeyCode.E) && !isBulletActive)
         {
             ShootBullet();
-        }
+        }*/
     }
 
     void BlueJump()
     {
-            rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+        audioSource.PlayOneShot(EnterSE);
+        rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
     }
 
 
-    void ShootBullet()//多分もう使わない（12/3時点)
+    /*void ShootBullet()//多分もう使わない（12/3時点)
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
@@ -133,5 +139,5 @@ public class OretaController : MonoBehaviour
     void ResetShootFlag()
     {
         isBulletActive = false; // 弾丸が消えたら再発射可能にする
-    }
+    }*/
 }

@@ -9,14 +9,15 @@ public class CoinBreaker : MonoBehaviour
 
     CoinManager managerScript;
 
+    //private AudioSource audioSource;
+    //public AudioClip maou_se_system46;
 
-    // Start is called before the first frame update
     void Start()
     {
+        
         managerScript = GameObject.Find("CoinManager").GetComponent<CoinManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -26,7 +27,7 @@ public class CoinBreaker : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("PlayerÇ™ê⁄êG");
+            //GetComponent<AudioSource>().Play();
             managerScript.PlayerHaveCoin += AddCoinCount;
             Destroy(gameObject);
         }

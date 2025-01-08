@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeadZoneScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DeadZoneScript : MonoBehaviour
     public float respawnDelay = 1f; // リスポーンの遅延時間
     public GameObject Player1Start;
     public GameObject Player2Start;
+
+    public string GameOverSceneName;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,8 +42,15 @@ public class DeadZoneScript : MonoBehaviour
         yield return new WaitForSeconds(respawnDelay);
 
         // リスポーン位置の設定
-        Vector3 respawnPosition = new Vector3(targetPosition.x, targetPosition.y+2, targetPosition.z);
+        Vector3 respawnPosition = new Vector3(targetPosition.x, targetPosition.y+1, targetPosition.z);
         player.transform.position = respawnPosition;
+
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero; // 速度をリセット
+            rb.angularVelocity = Vector3.zero; // 回転速度もリセット
+        }
 
         Player1Dead = false;
         Player2Dead = false;
@@ -48,6 +58,6 @@ public class DeadZoneScript : MonoBehaviour
 
     private void GameOver()//ゲームオーバー時の処理をここに書く
     {
-
+        SceneManager.LoadScene(GameOverSceneName);
     }
 }
