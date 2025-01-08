@@ -8,7 +8,7 @@ public class MainCamera : MonoBehaviour
     public Transform player2;
     public Vector3 focusPoint;
 
-    // ƒJƒƒ‰‚ÆƒvƒŒƒCƒ„[‚ÌƒIƒtƒZƒbƒg
+    // ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Æƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌƒIï¿½tï¿½Zï¿½bï¿½g
     private Vector3 offset = new Vector3(0, 1.2f, -3f);
 
     void LateUpdate()
@@ -16,8 +16,7 @@ public class MainCamera : MonoBehaviour
         //focusPoint = (player1.position*4 + player2.position*3) / 7;
         float focusX = (player1.position.x * 4 + player2.position.x * 3) / 7;
 
-        //focusPoint.y = Mathf.Clamp(focusPoint.y, 0f, 1f);
-        focusPoint = new Vector3(focusX, 0f, 0f);
+        focusPoint.y = Mathf.Clamp(focusPoint.y, 0f, 1.5f);
 
         transform.position = focusPoint + offset;
     }
