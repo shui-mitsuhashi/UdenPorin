@@ -13,6 +13,9 @@ public class MonotaController : MonoBehaviour
     public Camera playerCamera;
     private IsGroundScript childScript;
 
+    public AudioClip JanpSE;
+    private AudioSource audioSource;
+
 
     //腕伸ばしに使う弾丸
     public GameObject bulletPrefab; // 弾丸のプレハブ
@@ -29,7 +32,9 @@ public class MonotaController : MonoBehaviour
         childScript = childObject.GetComponent<IsGroundScript>();//トリガーに付いている判定用スクリプト取得
 
         rb = GetComponent<Rigidbody>();
-        
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -118,7 +123,8 @@ public class MonotaController : MonoBehaviour
 
     void RedJump()
     {
-            rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+        audioSource.PlayOneShot(JanpSE);
+        rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
     }
 
     void ShootBullet()

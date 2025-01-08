@@ -13,6 +13,9 @@ public class OretaController : MonoBehaviour
     public Camera playerCamera;
     private IsGroundScript childScript;
 
+    public AudioClip EnterSE;
+    private AudioSource audioSource;
+
 
     //腕伸ばし機能に使う弾丸
     public GameObject bulletPrefab; // 弾丸のプレハブ
@@ -27,6 +30,8 @@ public class OretaController : MonoBehaviour
         childScript = childObject.GetComponent<IsGroundScript>();//フィールドに代入
 
         rb = GetComponent<Rigidbody>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -112,7 +117,8 @@ public class OretaController : MonoBehaviour
 
     void BlueJump()
     {
-            rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+        audioSource.PlayOneShot(EnterSE);
+        rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
     }
 
 
