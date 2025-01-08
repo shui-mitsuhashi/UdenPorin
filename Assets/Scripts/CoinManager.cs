@@ -49,4 +49,16 @@ public class CoinManager : MonoBehaviour
             Debug.LogWarning("Coin sound is not assigned!");
         }
     }
+
+    void CoinDrop()
+    {
+        if(PlayerHaveCoin<10)
+        {
+            PlayerHaveCoin = 0;
+        }
+        else
+        {
+            PlayerHaveCoin = PlayerHaveCoin - 10;
+        }       
+    }
 }
