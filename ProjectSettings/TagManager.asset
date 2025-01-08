@@ -12,6 +12,7 @@ TagManager:
   - Trampoline
   - Grabbable
   - CarryBox
+  - Goal
   layers:
   - Default
   - TransparentFX
