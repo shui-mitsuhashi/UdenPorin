@@ -42,8 +42,15 @@ public class DeadZoneScript : MonoBehaviour
         yield return new WaitForSeconds(respawnDelay);
 
         // リスポーン位置の設定
-        Vector3 respawnPosition = new Vector3(targetPosition.x, targetPosition.y+2, targetPosition.z);
+        Vector3 respawnPosition = new Vector3(targetPosition.x, targetPosition.y+1, targetPosition.z);
         player.transform.position = respawnPosition;
+
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero; // 速度をリセット
+            rb.angularVelocity = Vector3.zero; // 回転速度もリセット
+        }
 
         Player1Dead = false;
         Player2Dead = false;

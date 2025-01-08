@@ -24,7 +24,7 @@ public class RedAnimation : MonoBehaviour
         float horizontal = Input.GetAxis("JoystickHorizontal1");
 
         //もし、スティックが倒されたら
-        if (horizontal >= -0.5f && horizontal <= 0.5f)
+        if (horizontal >= -0.2f && horizontal <= 0.2f)
         {
             //Bool型のパラメーターであるBuulRunをTrueにする
             anim.SetBool("BoolRun", false);
@@ -56,7 +56,7 @@ public class RedAnimation : MonoBehaviour
         }
 
         //腕伸ばし
-        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("RedJump")))
+        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("MonotaRTrigger")))
         {
             anim.SetBool("BoolStretch", true);
             isStretch = true;
