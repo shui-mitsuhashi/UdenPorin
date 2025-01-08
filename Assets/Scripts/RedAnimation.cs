@@ -56,7 +56,7 @@ public class RedAnimation : MonoBehaviour
         }
 
         //腕伸ばし
-        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("MonotaRTrigger")))
+        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetAxis("MonotaRTrigger") > 0.1f))
         {
             anim.SetBool("BoolStretch", true);
             isStretch = true;
