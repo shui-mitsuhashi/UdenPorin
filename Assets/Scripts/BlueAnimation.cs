@@ -56,7 +56,7 @@ public class BlueAnimation : MonoBehaviour
         }
 
         //˜rL‚Î‚µ
-        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetAxis("MonotaRTrigger") > 0.1f))
+        if (!isStretch && (Input.GetKeyDown(KeyCode.E) || Input.GetAxis("OretaRTrigger") > 0.1f))
         {
             anim.SetBool("BoolStretch", true);
             isStretch = true;
