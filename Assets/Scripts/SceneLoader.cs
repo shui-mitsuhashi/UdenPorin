@@ -14,6 +14,6 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("TestClearScene");
+        SceneManager.LoadScene("ClearScene");
     }
 }
