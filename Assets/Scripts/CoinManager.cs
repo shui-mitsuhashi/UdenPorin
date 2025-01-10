@@ -59,6 +59,8 @@ public class CoinManager : MonoBehaviour
         else
         {
             PlayerHaveCoin = PlayerHaveCoin - 10;
-        }       
+        }
+
+        previousCoinCount = PlayerHaveCoin;
     }
 }
