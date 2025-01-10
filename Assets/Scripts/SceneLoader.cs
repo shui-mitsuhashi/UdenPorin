@@ -14,6 +14,6 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("ClearScene");
+        SceneManager.LoadScene("KanataniSP");
     }
 }
