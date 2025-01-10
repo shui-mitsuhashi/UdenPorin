@@ -8,21 +8,27 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Model_Test.unity
     guid: 74f229b338eefa0479d2b6b619657d4e
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 3c3cbd66d1754e5479d15555b041fc3d
+  - enabled: 1
+    path: Assets/Scenes/KanataniSP.unity
+    guid: a701081cdff08424c8c50235a1a1f53b
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: d5d89928396cd454e955f978b025dad7
+  - enabled: 1
     path: Assets/Scenes/Setting.unity
     guid: 96df065d92ebdb141a46f56f0db37a45
   - enabled: 0
     path: Assets/Scenes/StageSelect.unity
     guid: 7d57d7a11829bbb4fb3ec377aae6b672
-  - enabled: 1
-    path: Assets/Scenes/TitleScene.unity
-    guid: 3c3cbd66d1754e5479d15555b041fc3d
-  - enabled: 1
-    path: Assets/Scenes/Result.unity
-    guid: d5d89928396cd454e955f978b025dad7
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/ClearScene.unity
+    guid: d29838dc0741b4a608e075362915bdec
   - enabled: 1
     path: Assets/Scenes/SampleStage.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

@@ -5,33 +5,33 @@ using TMPro;
 
 public class CoinCountUI : MonoBehaviour
 {
-    [Header("CoinManagerƒXƒNƒŠƒvƒg‚ªƒAƒ^ƒbƒ`‚³‚ê‚½ƒIƒuƒWƒFƒNƒg")]
+    [Header("CoinManagerã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒã‚¢ã‚¿ãƒƒãƒã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ")]
     public CoinManager coinManager;
 
-    [Header("•\¦‚³‚¹‚éTextMeshProƒIƒuƒWƒFƒNƒg")]
+    [Header("è¡¨ç¤ºã•ã›ã‚‹TextMeshProã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ")]
     public TextMeshProUGUI coinText;
 
     void Start()
     {
-        // •K—v‚É‰‚¶‚Ä CoinManager ‚ğ©“®æ“¾
+        // å¿…è¦ã«å¿œã˜ã¦ CoinManager ã‚’è‡ªå‹•å–å¾—
         if (coinManager == null)
         {
             coinManager = GameObject.FindObjectOfType<CoinManager>();
         }
 
-        // •K—v‚É‰‚¶‚Ä TextMeshPro ƒIƒuƒWƒFƒNƒg‚ğ©“®æ“¾
+        // å¿…è¦ã«å¿œã˜ã¦ TextMeshPro ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è‡ªå‹•å–å¾—
         if (coinText == null)
         {
             coinText = GameObject.FindObjectOfType<TextMeshProUGUI>();
         }
 
-        // ‰Šú’l‚ğXV
+        // åˆæœŸå€¤ã‚’æ›´æ–°
         UpdateCoinDisplay();
     }
 
     void Update()
     {
-        // í‚É CoinManager ‚ÌƒRƒCƒ“”‚ğ”½‰f
+        // å¸¸ã« CoinManager ã®ã‚³ã‚¤ãƒ³æ•°ã‚’åæ˜ 
         UpdateCoinDisplay();
     }
 
@@ -39,7 +39,7 @@ public class CoinCountUI : MonoBehaviour
     {
         if (coinManager != null && coinText != null)
         {
-            // ƒRƒCƒ“‚Ì–‡”‚ğ UI ‚É•\¦
+            // ã‚³ã‚¤ãƒ³ã®æšæ•°ã‚’ UI ã«è¡¨ç¤º
             coinText.text = "GetCoin:" + coinManager.PlayerHaveCoin.ToString("0");
         }
     }
