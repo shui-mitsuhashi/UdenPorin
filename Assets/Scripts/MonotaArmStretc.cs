@@ -10,6 +10,8 @@ public class MonotaArmStretc : MonoBehaviour
     public float scaleSpeed = 2f;    // ?X?P?[????ƒÖ????x
     private Vector3 originalScale;   // ????X?P?[??
     private bool isScaling = false;  // ?X?P?[???????????t???O
+    private int StretchframeCount = 0;
+    public int StretchFrames = 180;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class MonotaArmStretc : MonoBehaviour
         if (Input.GetKey(KeyCode.E) || Input.GetAxis("MonotaRTrigger") > 0.1f)
         {
             isScaling = true;  // ?X?P?[???????????
+            
         }
         else
         {
@@ -47,10 +50,11 @@ public class MonotaArmStretc : MonoBehaviour
         }
 
         // ?X?P?[????X?V
-        UpdateScale();
+        //UpdateScale();
 
         // ?g?????|??????R???C?_?[??L????/??????
         UpdateTrampolineCollider();
+        StretchframeCount = 0;
     }
 
     void UpdateScale()
@@ -76,13 +80,11 @@ public class MonotaArmStretc : MonoBehaviour
     void UpdateTrampolineCollider()
     {
         if (trampolineCollider == null) return;
-
+        StretchframeCount++;
         // targetObject??originalScale????????R???C?_?[??L????
-        if (targetObject.transform.localScale.x > originalScale.x)
-        {
-            trampolineCollider.enabled = true;
-        }
-        else
+        trampolineCollider.enabled = true;
+
+        if (StretchframeCount >= StretchFrames)
         {
             trampolineCollider.enabled = false;
         }

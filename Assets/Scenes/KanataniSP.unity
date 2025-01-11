@@ -3679,8 +3679,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193908679}
   m_LocalRotation: {x: -0, y: -0.46174863, z: -0, w: 0.8870109}
-  m_LocalPosition: {x: 0.0725, y: 0.05, z: 0.1437}
-  m_LocalScale: {x: 0.11386622, y: 0.02, z: 0.19999997}
+  m_LocalPosition: {x: 0.14, y: 0.05, z: 0.19}
+  m_LocalScale: {x: 0.44, y: 0.02, z: 0.19999997}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2071537630}
@@ -35470,8 +35470,81 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3385099, y: 0.021060556, z: 0.26490635}
-  m_Center: {x: 0.084197946, y: -0.036800727, z: 0.20015115}
+  m_Size: {x: 0.15, y: 0.021060556, z: 0.5}
+  m_Center: {x: 0.084197946, y: -0.036800727, z: 0.09}
+--- !u!1001 &1463111637
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1723238710}
+    m_Modifications:
+    - target: {fileID: 733644293, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: AddCoinCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0023063151
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0059999987
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.040800046
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507832078469002614, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032589857857286092, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
+      propertyPath: m_Name
+      value: Coin Variant (195)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc367cf39a9efbe449bbabb7a5bff410, type: 3}
 --- !u!1 &1463206490
 GameObject:
   m_ObjectHideFlags: 0
@@ -47451,6 +47524,7 @@ MonoBehaviour:
   targetObject: {fileID: 193908679}
   trampoline: {fileID: 193908679}
   scaleSpeed: 2
+  StretchFrames: 180
 --- !u!82 &2071537632
 AudioSource:
   m_ObjectHideFlags: 0
@@ -47972,6 +48046,7 @@ MonoBehaviour:
   targetObject: {fileID: 1460382504}
   trampoline: {fileID: 1460382504}
   scaleSpeed: 2
+  StretchFrames: 180
 --- !u!82 &2093810040
 AudioSource:
   m_ObjectHideFlags: 0

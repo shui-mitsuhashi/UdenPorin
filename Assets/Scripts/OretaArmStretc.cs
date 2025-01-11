@@ -10,6 +10,9 @@ public class OretaArmStretc : MonoBehaviour
     public float scaleSpeed = 2f;    // ?X?P?[????ƒÖ????x
     private Vector3 originalScale;   // ????X?P?[??
     private bool isScaling = false;  // ?X?P?[???????????t???O
+    private int StretchframeCount = 0;
+    public int StretchFrames = 180;
+
 
     void Start()
     {
@@ -47,7 +50,7 @@ public class OretaArmStretc : MonoBehaviour
         }
 
         // ?X?P?[????X?V
-        UpdateScale();
+        //UpdateScale();
 
         // ?g?????|??????R???C?_?[??L????/??????
         UpdateTrampolineCollider();
@@ -76,13 +79,11 @@ public class OretaArmStretc : MonoBehaviour
     void UpdateTrampolineCollider()
     {
         if (trampolineCollider == null) return;
-
+        StretchframeCount++;
         // targetObject??originalScale????????R???C?_?[??L????
-        if (targetObject.transform.localScale.x > originalScale.x)
-        {
-            trampolineCollider.enabled = true;
-        }
-        else
+        trampolineCollider.enabled = true;
+
+        if (StretchframeCount >= StretchFrames)
         {
             trampolineCollider.enabled = false;
         }
