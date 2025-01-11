@@ -15,8 +15,11 @@ public class CoinManager : MonoBehaviour
 
     void Start()
     {
-        // シーン開始時毎回0に初期化
-        PlayerHaveCoin = 0;
+        // シーンが読み込まれるたびにコインの数を0に初期化
+        PlayerPrefs.SetFloat("PlayerHaveCoin", 0);
+
+        // 初期化されたコイン数を取得
+        PlayerHaveCoin = PlayerPrefs.GetFloat("PlayerHaveCoin", 0);
         previousCoinCount = PlayerHaveCoin;
 
         // AudioSourceコンポーネントを取得
@@ -35,6 +38,9 @@ public class CoinManager : MonoBehaviour
         {
             PlayCoinSound();
             previousCoinCount = PlayerHaveCoin;
+
+            // コインを取得した際にPlayerPrefsに保存
+            PlayerPrefs.SetFloat("PlayerHaveCoin", PlayerHaveCoin);
         }
     }
 
@@ -52,13 +58,18 @@ public class CoinManager : MonoBehaviour
 
     void CoinDrop()
     {
-        if(PlayerHaveCoin<10)
+        if (PlayerHaveCoin < 10)
         {
             PlayerHaveCoin = 0;
         }
         else
         {
             PlayerHaveCoin = PlayerHaveCoin - 10;
-        }       
+        }
+
+        previousCoinCount = PlayerHaveCoin;
+
+        // コインの数をPlayerPrefsに保存
+        PlayerPrefs.SetFloat("PlayerHaveCoin", PlayerHaveCoin);
     }
 }

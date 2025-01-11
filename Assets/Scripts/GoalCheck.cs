@@ -1,19 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;  // UIコンポーネントを使用
+using UnityEngine.SceneManagement;
 
 public class GoalCheck : MonoBehaviour
 {
     public GameObject player1;  // プレイヤー1
     public GameObject player2;  // プレイヤー2
-    public GameObject clearScreen;  // クリア画面（例えばCanvasのUIパネル）
+    //public GameObject clearScreen;  // クリア画面（例えばCanvasのUIパネル）
 
     private bool player1Reached = false;  // プレイヤー1がゴールに到達したか
     private bool player2Reached = false;  // プレイヤー2がゴールに到達したか
 
+    public string sceneName;//移行したいシーン名をインスペクターに入力
+
     void Start()
     {
         // クリア画面を非表示にする
-        clearScreen.SetActive(false);
+        //clearScreen.SetActive(false);
     }
 
     void Update()
@@ -41,6 +44,7 @@ public class GoalCheck : MonoBehaviour
     // クリア画面を表示するメソッド
     void ShowClearScreen()
     {
-        clearScreen.SetActive(true);
+        SceneManager.LoadScene(sceneName);
+        //clearScreen.SetActive(true);
     }
 }
