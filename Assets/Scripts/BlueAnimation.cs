@@ -63,13 +63,13 @@ public class BlueAnimation : MonoBehaviour
             StretchframeCount = 0; // フレームカウントをリセット
         }
 
-        // ジャンプ中の処理
+        // 腕伸ばし中の処理
         if (isStretch)
         {
             StretchframeCount++;
 
-            // フレーム数が目標に達したらジャンプ終了
-            if (StretchframeCount >= JumpFrames)
+            // フレーム数が目標に達したら腕伸ばし終了
+            if (StretchframeCount >= StretchFrames)
             {
                 anim.SetBool("BoolStretch", false);
                 isStretch = false;

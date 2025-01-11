@@ -69,7 +69,7 @@ public class RedAnimation : MonoBehaviour
             StretchframeCount++;
 
             // フレーム数が目標に達したらジャンプ終了
-            if (StretchframeCount >= JumpFrames)
+            if (StretchframeCount >= StretchFrames)
             {
                 anim.SetBool("BoolStretch", false);
                 isStretch = false;
